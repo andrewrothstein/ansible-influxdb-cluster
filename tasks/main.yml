@@ -1,5 +1,4 @@
 ---
-# tasks file for ansible-influxdb
 - name: configure...
   become: yes
   become_user: root
@@ -9,8 +8,8 @@
     mode=0644
   with_items:
     - etc/influxdb/influxdb.conf
-    - etc/default/influxdb
-    - lib/influxdb/init.sh
+    - usr/lib/influxdb/scripts/init.sh
+    - usr/lib/influxdb/scripts/influxdb.service
 
 - name: install service
   include: '{{influxdb_init|default("systemd")}}.yml'

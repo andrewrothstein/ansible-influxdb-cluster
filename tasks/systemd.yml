@@ -4,11 +4,11 @@
   become: yes
   become_user: root
   template: >-
-    src={{item}}.j2
-    dest=/{{item}}
+    src=usr/lib/influxdb/scripts/influxdb.service.j2
+    dest=/usr/lib/systemd/system/influxdb.service
     mode=0644
-  with_items:
-    - usr/lib/systemd/system/influxdb.service
 
 - name: launch influxdb
+  become: yes
+  become_user: root
   service: name=influxdb enabled=yes state=started
