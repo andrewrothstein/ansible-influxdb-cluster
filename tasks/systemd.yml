@@ -1,0 +1,14 @@
+---
+# tasks file for ansible-influxdb
+- name: configure...
+  become: yes
+  become_user: root
+  template: >-
+    src={{item}}.j2
+    dest=/{{item}}
+    mode=0644
+  with_items:
+    - usr/lib/systemd/system/influxdb.service
+
+- name: launch influxdb
+  service: name=influxdb enabled=yes state=started

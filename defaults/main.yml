@@ -1,0 +1,31 @@
+---
+# defaults file for influxdb-cluster
+influxdb_dir: /usr/local/influxdb
+
+rite_timeout : '10s'
+
+influxdb_retention_enabled : 'true'
+influxdb_retention_check_interval : '30m'
+
+influxdb_shard_precreation_enabled : 'true'
+influxdb_shard_check_interval : '10m'
+influxdb_shard_advance_period : '30m'
+
+influxdb_monitor_store_enabled : 'true'
+influxdb_monitor_store_database : '_internal'
+influxdb_monitor_store_interval : '10s'
+
+influxdb_admin_port : 8083
+influxdb_admin_enabled : 'true'
+influxdb_admin_https_enabled : 'false'
+influxdb_admin_https_cert : /etc/ssl/influxdb.pem
+
+influxdb_http_enabled : 'true'
+influxdb_http_port : 8086
+influxdb_http_auth_enabled : 'false'
+influxdb_http_log_enabled : 'true'
+influxdb_http_write_tracing : 'false'
+influxdb_http_pprof_enabled : 'false'
+influxdb_http_https_enabled : 'false'
+influxdb_http_https_cert : /etc/ssl/influxdb.pem
+
